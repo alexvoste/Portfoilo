@@ -29,7 +29,6 @@
       </div>
     </header>
 
-    <main class="relative">
       <HeroSection />
       <AboutSection />
       <PrimaryTechnicalFocus />
