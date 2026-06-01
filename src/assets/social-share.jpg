@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F0E5"/>
+  <g fill="#344955" font-family="JetBrains Mono, monospace" font-size="48">
+    <text x="60" y="110">AlexVoste</text>
+  </g>
+  <g transform="translate(60,160)">
+    <path d="M0,320 C150,200 300,400 450,320 C600,240 750,400 900,320 C1050,240 1150,360 1200,320 L1200,630 L0,630 Z" fill="#AFC8DC" opacity="0.9"/>
+  </g>
+  <circle cx="1060" cy="80" r="36" fill="#CB624F"/>
+</svg>
