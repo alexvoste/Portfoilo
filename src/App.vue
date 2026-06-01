@@ -29,6 +29,7 @@
       </div>
     </header>
 
+    <main>
       <HeroSection />
       <AboutSection />
       <PrimaryTechnicalFocus />
