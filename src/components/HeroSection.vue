@@ -14,19 +14,21 @@
               alexvoste
             </h1>
             <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.6;">
-              systems · low-level · privacy
+              go · systems · low-level · privacy
             </p>
           </div>
 
           <div class="flex flex-col justify-center">
             <p style="color: #e5e0c7; font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">
-              yo. i'm alexvoste — systems engineer who actually gives a fuck about performance and privacy.
+              yo. i'm alexvoste — <strong>Go developer</strong> with a low-level soul.
             </p>
             <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px;">
-              i build OS shit, compilers, bootloaders. living in the bare metal trenches. no bloat, no bullshit abstractions — just code that fucking works.
+              building <strong>ForgeZero</strong> — an open-source build system for C/asm, written in Go. 
+              contributing to <strong>NASM</strong> (AVX512-FP16) and <strong>Limine</strong> (EFI handover). 
+              i speak <strong>Go, C, and assembly</strong> fluently.
             </p>
             <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.8;">
-              open-source or die. contributing to toolchains you actually use. if it ain't fast and auditable, i don't want it.
+              open-source or die. fast, secure, auditable. if it ain't, i don't want it.
             </p>
           </div>
         </div>
@@ -35,9 +37,9 @@
       <div class="divider"></div>
 
       <div class="content-card" style="margin-top: 32px; padding: 32px; background: #1e1f1e; border: 1px solid #2a2b2a;">
-        <p class="quote-text" style="margin-bottom: 0; color: #EC8254;">古池や蛙飛びこむ水の音</p>
+        <p class="quote-text" style="margin-bottom: 0; color: #EC8254;">“The computer is not the product. The product is what you build with it.”</p>
         <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 16px; font-style: italic;">
-          old pond — frog jumps in, splash. — bashō, probably drunk
+          — alexvoste / ForgeZero
         </p>
       </div>
     </div>
