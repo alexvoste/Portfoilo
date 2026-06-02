@@ -32,6 +32,7 @@
     <main>
       <HeroSection />
       <AboutSection />
+      <DiplomaSection />
       <PrimaryTechnicalFocus />
       <ForgeZeroSection />
       <ForgeZeroSpeed />
@@ -50,4 +51,5 @@ import ForgeZeroSection from './components/ForgeZeroSection.vue'
 import LinksSection from './components/LinksSection.vue'
 import Footer from './components/Footer.vue'
 import ForgeZeroSpeed from './components/ForgeZeroSpeed.vue'
+import DiplomaSection from './components/StudySection.vue'
 </script>
