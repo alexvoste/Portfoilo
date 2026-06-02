@@ -3,11 +3,11 @@
     <div class="max-w-5xl mx-auto px-6 py-20">
       <div class="content-card p-12">
         <h2 style="color: var(--hokusai-heading); font-family: 'Inter', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 24px;">
-          About Me
+          /whoami
         </h2>
 
         <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">
-          Hi there. I'm AlexVoste, a systems engineer deeply passionate about building fast, reliable, and privacy-respecting software. My work spans operating system development, compiler infrastructure, and bootloader engineering — primarily working at the lowest levels of the stack.
+         yo, I'm AlexVoste — systems engineer who fucks with low-level shit. building fast, reliable, privacy-respecting software is my jam. OS dev, compiler bullshit, bootloader wizardry — I live down in the bare metal trenches.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
@@ -16,34 +16,34 @@
               OS Dev
             </h3>
             <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.6;">
-              Building GloriaOS (x86_64, Long Mode, pure ASM/C)
+              GloriaOS — x86_64, Long Mode, pure ASM/C. shit's wild.
             </p>
           </div>
 
           <div class="grid-card">
             <h3 style="color: var(--hokusai-accent); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 8px;">
-              Compiler Contributor
+              NASM Gang
             </h3>
             <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.6;">
-              Active contributor to NASM (The Netwide Assembler)
+              throwing patches at The Netwide Assembler like it's nothing
             </p>
           </div>
 
           <div class="grid-card">
             <h3 style="color: var(--hokusai-accent); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 8px;">
-              Bootloader Contributor
+              Limine Shit
             </h3>
             <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.6;">
-              Active contributor to Limine (bootloader & boot protocol)
+              bootloader contributor — cuz someone gotta handle that boot protocol nonsense
             </p>
           </div>
 
           <div class="grid-card">
             <h3 style="color: var(--hokusai-accent); font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 8px;">
-              Tools
+              Toolchain
             </h3>
             <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.6;">
-              Writing code in NASM & C
+              NASM, C, and a whole lot of caffeine
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@
           旅に病で夢は枯野をかけめぐる
         </p>
         <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; margin-top: 16px; font-style: italic;">
-          Illness on the road, dreams run through the withered fields. — Yosa Buson
+          sick on the road, dreams still roaming the dead fields. — Buson, probably drunk
         </p>
       </div>
     </div>
