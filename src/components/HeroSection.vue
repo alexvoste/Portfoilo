@@ -1,32 +1,32 @@
 <template>
   <section id="hero" class="section-animate">
     <div class="max-w-5xl mx-auto px-6 py-32">
-      <div class="content-card">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 p-12">
+      <div class="content-card" style="background: #1e1f1e; border: 1px solid #2a2b2a;">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 p-8 md:p-12">
           <div class="flex flex-col justify-center items-center md:items-start">
             <img
               src="/src/assets/avatar.png"
               alt="AlexVoste Avatar"
               class="w-48 h-48 rounded-full shadow-xl mb-8"
-              style="background-color: var(--hokusai-content); border: 4px solid var(--hokusai-accent); object-fit: cover"
+              style="background-color: #0d0e0d; border: 4px solid #EC8254; object-fit: cover"
             >
-            <h1 style="color: var(--hokusai-heading); font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 8px;">
-              AlexVoste
+            <h1 style="color: #e5e0c7; font-family: 'Inter', sans-serif; font-size: 2.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 8px;">
+              alexvoste
             </h1>
-            <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; letter-spacing: 0.1em; line-height: 1.6;">
-              systems programming · low-level engineering · privacy-first software
+            <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.1em; line-height: 1.6;">
+              systems · low-level · privacy
             </p>
           </div>
 
           <div class="flex flex-col justify-center">
-            <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; line-height: 1.8; margin-bottom: 16px;">
-              Hi there. I'm AlexVoste, a systems engineer deeply passionate about building fast, reliable, and privacy-respecting software.
+            <p style="color: #e5e0c7; font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.8; margin-bottom: 16px;">
+              yo. i'm alexvoste — systems engineer who actually gives a fuck about performance and privacy.
             </p>
-            <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">
-              My work spans operating system development, compiler infrastructure, and bootloader engineering — primarily working at the lowest levels of the stack.
+            <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px;">
+              i build OS shit, compilers, bootloaders. living in the bare metal trenches. no bloat, no bullshit abstractions — just code that fucking works.
             </p>
-            <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 1rem; line-height: 1.8;">
-              I believe in writing code that is both efficient and maintainable, with a strong focus on minimizing abstractions where they're not needed. I'm committed to open-source collaboration and contributing to foundational tools that other developers rely on.
+            <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.8;">
+              open-source or die. contributing to toolchains you actually use. if it ain't fast and auditable, i don't want it.
             </p>
           </div>
         </div>
@@ -34,10 +34,10 @@
 
       <div class="divider"></div>
 
-      <div class="content-card" style="margin-top: 32px; padding: 32px;">
-        <p class="quote-text" style="margin-bottom: 0;">古池や蛙飛びこむ水の音</p>
-        <p style="color: var(--hokusai-text); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; margin-top: 16px; font-style: italic;">
-          An old pond, a frog jumps in — the sound of water. — Matsuo Bashō
+      <div class="content-card" style="margin-top: 32px; padding: 32px; background: #1e1f1e; border: 1px solid #2a2b2a;">
+        <p class="quote-text" style="margin-bottom: 0; color: #EC8254;">古池や蛙飛びこむ水の音</p>
+        <p style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 16px; font-style: italic;">
+          old pond — frog jumps in, splash. — bashō, probably drunk
         </p>
       </div>
     </div>
