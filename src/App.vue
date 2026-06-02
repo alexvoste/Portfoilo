@@ -22,6 +22,8 @@
     <main>
       <HeroSection />
       <AboutSection />
+      <HistorySection />
+      <TerminalSection />
       <DiplomaSection />
       <PrimaryTechnicalFocus />
       <ForgeZeroSection />
@@ -42,6 +44,8 @@ import LinksSection from './components/LinksSection.vue'
 import Footer from './components/Footer.vue'
 import ForgeZeroSpeed from './components/ForgeZeroSpeed.vue'
 import DiplomaSection from './components/StudySection.vue'
+import HistorySection from './components/HistorySection.vue'
+import TerminalSection from './components/TerminalSection.vue'
 </script>
 
 <style scoped>
