@@ -71,6 +71,8 @@ const outputLines = ref([
   { type: 'prompt', content: '' }
 ])
 
+const sudoAttempts = ref(0)
+
 const commands = {
   help: () => ({
     type: 'response',
@@ -88,6 +90,16 @@ available commands:
   uptime      - how long i've been coding
   motd        - message of the day
   neofetch    - ascii + sysinfo
+  whoami      - display current user
+  id          - show user identity
+  uname -a    - system information
+  echo        - repeat after me
+  date        - current time
+  cowsay      - cow says hello
+  sl          - steam locomotive
+  fortune     - random wisdom
+  sudo        - try to gain privileges
+  rm -rf /    - dangerous command
   clear       - clean screen
     `.trim()
   }),
@@ -152,15 +164,88 @@ Footer/
     content: `"The computer is not the product. The product is what you build with it." — alexvoste`
   }),
 
-  neofetch: () => ({
+  whoami: () => ({
+    type: 'response',
+    content: `alexvoste`
+  }),
+
+  id: () => ({
+    type: 'response',
+    content: `uid=1000(alexvoste) gid=1000(alexvoste) groups=1000(alexvoste),10(wheel),998(docker)`
+  }),
+
+  'uname -a': () => ({
+    type: 'response',
+    content: `Linux forgezero 7.0.10-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC x86_64 GNU/Linux`
+  }),
+
+  date: () => ({
+    type: 'response',
+    content: new Date().toString()
+  }),
+
+  cowsay: () => ({
     type: 'ascii',
     content: `
-        .-.-.   alexvoste@forgezero
-       |'-+-'|  os: arch linux
-       | --- |  shell: zsh 5.9
-       |:-:-:|  lang: go, c, asm
-       |:-:-:|  focus: low-level, systems
-       '-...-'  vibe: no bullshit
+  _______
+< hello >
+  -------
+         \\   ^__^
+          \\  (oo)\\_______
+             (__)\\       )\\/\\
+                 ||----w |
+                 ||     ||
+    `
+  }),
+
+  sl: () => ({
+    type: 'ascii',
+    content: `
+        ====        ________
+    _D _|  |_______/        \\___
+     |_/                   (_____}
+    /                                train? never heard of it
+    `
+  }),
+
+  fortune: () => {
+    const fortunes = [
+      '"It works on my machine" — every developer ever',
+      'There are only two hard things in Computer Science: cache invalidation and naming things.',
+      'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.',
+      'The code is more what you would call guidelines than actual rules.',
+      'Premature optimization is the root of all evil.',
+      'Real programmers count from 0.',
+      'The computer is not the product. The product is what you build with it.'
+    ]
+    return {
+      type: 'response',
+      content: fortunes[Math.floor(Math.random() * fortunes.length)]
+    }
+  },
+
+  sudo: () => {
+    sudoAttempts.value++
+    const messages = [
+      `nice try. no root for you.`,
+      `not today, hacker. attempt #${sudoAttempts.value}`,
+      `sudo: command not found. oh wait, it's my terminal. fuck off.`,
+      `you really think i'd give you root? cute.`,
+      `sudo: incident reported to /dev/null`
+    ]
+    return {
+      type: 'response',
+      content: messages[Math.min(sudoAttempts.value - 1, messages.length - 1)]
+    }
+  },
+
+  'rm -rf /': () => ({
+    type: 'ascii',
+    content: `
+  ╔═══════════════════════════════════════╗
+  ║  nice try, but i like my system.      ║
+  ║  rm -rf / blocked. go play elsewhere. ║
+  ╚═══════════════════════════════════════╝
     `
   }),
 
@@ -179,6 +264,9 @@ async function handleCommand() {
   let response
   if (commands[cmd]) {
     response = commands[cmd]()
+  } else if (cmd.startsWith('echo ')) {
+    const text = cmd.substring(5)
+    response = { type: 'response', content: text }
   } else {
     response = { type: 'response', content: `command not found: ${cmd}. try help` }
   }
