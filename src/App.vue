@@ -34,6 +34,7 @@
       <AboutSection />
       <PrimaryTechnicalFocus />
       <ForgeZeroSection />
+      <ForgeZeroSpeed />
       <LinksSection />
     </main>
 
@@ -48,4 +49,5 @@ import PrimaryTechnicalFocus from './components/PrimaryTechnicalFocus.vue'
 import ForgeZeroSection from './components/ForgeZeroSection.vue'
 import LinksSection from './components/LinksSection.vue'
 import Footer from './components/Footer.vue'
+import ForgeZeroSpeed from './components/ForgeZeroSpeed.vue'
 </script>
