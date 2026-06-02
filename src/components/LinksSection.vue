@@ -1,70 +1,186 @@
 <template>
   <section id="connect-explore" class="section-animate">
-    <div class="max-w-5xl mx-auto px-6 py-20">
-      <div class="content-card">
-        <div class="section-header">
-          connect & explore
-        </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+      <div class="relative">
+        <div class="absolute -top-10 -left-10 w-40 h-40 border-l-2 border-b-2 border-[#EC8254]/20 rounded-bl-3xl hidden lg:block"></div>
+        
+        <div class="content-card group relative overflow-hidden" style="background: linear-gradient(135deg, #1a1b1a 0%, #121312 100%); border: 1px solid #2a2b2a;">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-[#EC8254]/5 rounded-full blur-3xl pointer-events-none group-hover:opacity-100 opacity-0 transition-opacity duration-700"></div>
+          
+          <div class="relative p-6 sm:p-8 lg:p-10">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 lg:mb-10">
+              <div class="flex items-center gap-3">
+                <div class="w-1 h-8 bg-[#EC8254] rounded-full"></div>
+                <h2 class="text-sm sm:text-base uppercase tracking-[0.3em] font-semibold" style="color: #7a7563; font-family: 'Inter', sans-serif;">
+                  connect & explore
+                </h2>
+              </div>
+              <div class="flex gap-2">
+                <span class="led-green w-2 h-2"></span>
+                <span class="text-[0.65rem] font-mono text-[#7a7563]">active</span>
+              </div>
+            </div>
 
-        <div class="links-grid">
-          <a href="https://t.me/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">Telegram</div>
-            <div class="link-sub">t.me/alexvoste</div>
-          </a>
+            <div class="links-grid">
+              <a href="https://t.me/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Telegram
+                    </div>
+                    <div class="link-sub">@alexvoste</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://github.com/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">GitHub</div>
-            <div class="link-sub">github.com/alexvoste</div>
-          </a>
+              <a href="https://github.com/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      GitHub
+                    </div>
+                    <div class="link-sub">/alexvoste</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://discord.gg/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">Discord</div>
-            <div class="link-sub">discord.gg/alexvoste</div>
-          </a>
+              <a href="https://discord.gg/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Discord
+                    </div>
+                    <div class="link-sub">/alexvoste</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://t.me/alexvostedev" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">Blog</div>
-            <div class="link-sub">@alexvostedev - telegram</div>
-          </a>
+              <a href="https://t.me/alexvostedev" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Blog (TG)
+                    </div>
+                    <div class="link-sub">@alexvostedev</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="mailto:alexvostedev@proton.me" class="contact-link">
-            <div class="link-title">Mail</div>
-            <div class="link-sub">alexvostedev@proton.me</div>
-          </a>
+              <a href="mailto:alexvostedev@proton.me" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Mail
+                    </div>
+                    <div class="link-sub">alexvostedev@proton.me</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://instagram.com/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">Instagram</div>
-            <div class="link-sub">instagram.com/alexvoste</div>
-          </a>
+              <a href="https://instagram.com/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Instagram
+                    </div>
+                    <div class="link-sub">/alexvoste</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://t.me/alexbronsone" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">US Telegram</div>
-            <div class="link-sub">t.me/alexbronsone</div>
-          </a>
+              <a href="https://t.me/alexbronsone" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      US Telegram
+                    </div>
+                    <div class="link-sub">@alexbronsone</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://wienton.ru" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">Portfolio (C-based)</div>
-            <div class="link-sub">wienton.ru</div>
-          </a>
+              <a href="https://wienton.ru" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      Portfolio (C-based)
+                    </div>
+                    <div class="link-sub">wienton.ru</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://dev.to/bare_metal_junkie" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <div class="link-title">dev.to</div>
-            <div class="link-sub">dev.to/bare_metal_junkie</div>
-          </a>
+              <a href="https://dev.to/bare_metal_junkie" target="_blank" rel="noopener noreferrer" class="contact-link group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      dev.to
+                    </div>
+                    <div class="link-sub">/bare_metal_junkie</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://dev.to/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link featured-border">
-            <div class="link-title">dev.to</div>
-            <div class="link-sub">dev.to/alexvoste</div>
-          </a>
+              <a href="https://dev.to/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link featured-border group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      dev.to (main)
+                    </div>
+                    <div class="link-sub">/alexvoste</div>
+                  </div>
+                  <span class="text-[#EC8254] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
 
-          <a href="https://coderlegion.com/user/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link full-width-item">
-            <div class="link-title">coderlegion</div>
-            <div class="link-sub">coderlegion.com/user/alexvoste</div>
-          </a>
-        </div>
+              <a href="https://coderlegion.com/user/alexvoste" target="_blank" rel="noopener noreferrer" class="contact-link full-width-item group/link">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <div class="link-title flex items-center gap-2">
+                      <span class="text-[#EC8254]">▶</span>
+                      CoderLegion
+                    </div>
+                    <div class="link-sub">coderlegion.com/user/alexvoste</div>
+                  </div>
+                  <span class="text-[#7a7563] text-xs opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                </div>
+              </a>
+            </div>
 
-        <div class="footer-section">
-          <a href="#about" class="footer-link">about me: click here →</a>
+            <div class="footer-section">
+              <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full h-px bg-gradient-to-r from-transparent via-[#2a2b2a] to-transparent"></div>
+                </div>
+                <div class="relative flex justify-center">
+                  <a href="#about" class="footer-link group/footer">
+                    <span class="trackpoint-small mr-2"></span>
+                    about me: click here
+                    <span class="ml-2 transition-transform duration-200 group-hover/footer:translate-x-1">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,7 +192,7 @@
 
 <style scoped>
 .section-animate {
-  animation: fadeUp 0.65s ease-out forwards;
+  animation: fadeUp 0.65s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
   opacity: 0;
   transform: translateY(16px);
 }
@@ -88,82 +204,80 @@
   }
 }
 
-.max-w-5xl {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .content-card {
-  background: #242524;
-  border-radius: 28px;
-  padding: 2rem;
-  transition: all 0.2s;
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 32px;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
-.section-header {
-  color: #7a7563;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  margin-bottom: 2rem;
-  font-weight: 500;
+.content-card:hover {
+  border-color: #EC8254;
+  transform: translateY(-3px);
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6);
 }
 
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 }
 
 .contact-link {
   display: block;
-  background: #1a1b1a;
-  border: 1px solid #3a3a35;
+  background: #0d0e0d;
+  border: 1px solid #2a2b2a;
   border-radius: 20px;
-  padding: 1.25rem 1.25rem;
+  padding: 1rem 1.25rem;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(236, 130, 84, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-link:hover::before {
+  left: 100%;
 }
 
 .contact-link:hover {
   border-color: #EC8254;
-  background: #2a2b2a;
-  transform: translateY(-2px);
+  background: #161716;
+  transform: translateX(4px);
 }
 
 .contact-link:hover .link-title {
   color: #EC8254;
 }
 
-.contact-link:hover .link-sub {
-  color: #e5e0c7;
-}
-
 .link-title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 0.875rem;
-  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
   color: #e5e0c7;
   transition: color 0.2s;
 }
 
 .link-sub {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #b8b29a;
   word-break: break-word;
   transition: color 0.2s;
@@ -175,6 +289,7 @@
 
 .featured-border {
   border: 1px solid #EC8254;
+  background: rgba(236, 130, 84, 0.05);
 }
 
 .footer-section {
@@ -186,91 +301,71 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.3em;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: opacity 0.2s, transform 0.2s;
-  font-weight: 500;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .footer-link:hover {
   opacity: 0.85;
-  transform: translateX(3px);
+  letter-spacing: 0.35em;
+}
+
+.led-green {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 6px #2ecc71;
+  animation: led-blink 2s step-start infinite;
+}
+
+.trackpoint-small {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #da3e1a;
+  box-shadow: 0 0 3px #da3e1a;
+  vertical-align: middle;
+}
+
+@keyframes led-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 @media (max-width: 640px) {
-  .py-20 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
-  .px-6 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
   .content-card {
-    padding: 1.5rem;
     border-radius: 24px;
   }
   
-  .links-grid {
-    grid-template-columns: 1fr;
-    gap: 0.875rem;
-  }
-  
-  .contact-link {
-    padding: 1rem 1.25rem;
-  }
-  
   .link-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .link-sub {
-    font-size: 0.7rem;
-  }
-  
-  .section-header {
     font-size: 0.65rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 768px) {
-  .links-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
   
-  .content-card {
-    padding: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .content-card {
-    padding: 3rem;
-  }
-  
-  .link-sub {
-    font-size: 0.8rem;
+  .footer-link {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
   }
 }
 
 @media (max-width: 380px) {
   .link-sub {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     word-break: break-all;
   }
   
   .contact-link {
-    padding: 0.9rem 1rem;
-  }
-  
-  .footer-link {
-    font-size: 0.6rem;
+    padding: 0.85rem 1rem;
   }
 }
 </style>
