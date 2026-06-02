@@ -1,62 +1,73 @@
 <template>
-  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-    <div class="text-center mb-8">
-      <div class="inline-block">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background: #1e1f1e; border: 1px solid #2a2b2a;">
-          <span style="width: 8px; height: 8px; border-radius: 50%; background: #27c93f; box-shadow: 0 0 6px #27c93f;"></span>
-          <span style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em;">TERMINAL_READY</span>
-        </span>
-      </div>
-      <p class="mt-4" style="color: #e5e0c7; font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 500;">
-        get your hands dirty.<br>
-        <span style="color: #EC8254; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-          ~ $ <span class="cursor-blink">_</span>
-        </span>
-      </p>
-      <div class="flex justify-center mt-2">
-        <div class="flex gap-1">
-          <span style="width: 40px; height: 2px; background: #EC8254; opacity: 0.5;"></span>
-          <span style="width: 20px; height: 2px; background: #EC8254;"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="terminal" style="background: #0a0b0a; border: 1px solid #2a2b2a; border-radius: 12px; overflow: hidden;">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+    <div class="relative">
+      <div class="absolute -top-6 -left-6 w-24 h-24 border-l-2 border-t-2 border-[#EC8254]/20 rounded-tl-2xl hidden lg:block"></div>
       
-      <div class="terminal-header" style="background: #1a1b1a; padding: 12px 16px; border-bottom: 1px solid #2a2b2a; display: flex; align-items: center; gap: 8px;">
-        <div style="display: flex; gap: 8px;">
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></div>
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></div>
-          <div style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></div>
-        </div>
-        <span style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; margin-left: auto;">alexvoste@forgezero:~</span>
-      </div>
-
-      <div class="terminal-body" style="padding: 20px; min-height: 400px; max-height: 500px; overflow-y: auto;">
-        <div v-for="(line, idx) in outputLines" :key="idx" class="terminal-line" style="margin-bottom: 12px;">
-          <span v-if="line.type === 'prompt'" style="color: #27c93f;">alexvoste@forgezero:~$</span>
-          <span v-if="line.type === 'prompt'" style="color: #e5e0c7; margin-left: 8px;">{{ line.content }}</span>
-          <div v-if="line.type === 'response'" style="color: #b8b29a; margin-top: 4px; white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
-            {{ line.content }}
-          </div>
-          <div v-if="line.type === 'ascii'" style="color: #EC8254; margin-top: 8px; white-space: pre; font-family: monospace; font-size: 0.7rem;">
-            <pre>{{ line.content }}</pre>
+      <div class="text-center mb-8 lg:mb-10">
+        <div class="inline-block group">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 group-hover:border-[#EC8254]/50" style="background: #1e1f1e; border: 1px solid #2a2b2a;">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#27c93f] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#27c93f]" style="box-shadow: 0 0 6px #27c93f;"></span>
+            </span>
+            <span style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem sm:text-0.75rem; letter-spacing: 0.05em;">INTERACTIVE_TERMINAL</span>
           </div>
         </div>
-
-        <div class="input-line" style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
-          <span style="color: #27c93f;">alexvoste@forgezero:~$</span>
-          <input
-            ref="inputRef"
-            v-model="currentCommand"
-            type="text"
-            class="command-input"
-            style="background: transparent; border: none; color: #e5e0c7; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; outline: none; flex: 1;"
-            @keyup.enter="handleCommand"
-            placeholder="type help"
-          />
+        
+        <p class="mt-5 text-base sm:text-lg md:text-xl font-medium" style="color: #e5e0c7; font-family: 'Inter', sans-serif;">
+          <span class="text-[#EC8254]">$</span> poke around.<br>
+          <span style="color: #EC8254; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem sm:text-0.9rem;">
+            ~ $ <span class="cursor-blink">_</span>
+          </span>
+        </p>
+        
+        <div class="flex justify-center mt-3">
+          <div class="flex gap-1">
+            <span style="width: 30px; height: 2px; background: #EC8254; opacity: 0.3;"></span>
+            <span style="width: 40px; height: 2px; background: #EC8254; opacity: 0.6;"></span>
+            <span style="width: 20px; height: 2px; background: #EC8254;"></span>
+          </div>
         </div>
       </div>
+
+      <div class="terminal group" style="background: #0a0b0a; border: 1px solid #2a2b2a; border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+        <div class="terminal-header" style="background: #1a1b1a; padding: 12px 16px; border-bottom: 1px solid #2a2b2a; display: flex; align-items: center; gap: 8px;">
+          <div style="display: flex; gap: 8px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; transition: all 0.2s;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e; transition: all 0.2s;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f; transition: all 0.2s;"></div>
+          </div>
+          <span style="color: #b8b29a; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem sm:text-0.75rem; margin-left: auto; opacity: 0.7;">alexvoste@forgezero:~</span>
+        </div>
+
+        <div class="terminal-body" style="padding: 1.25rem; min-height: 400px; max-height: 500px; overflow-y: auto;">
+          <div v-for="(line, idx) in outputLines" :key="idx" class="terminal-line" style="margin-bottom: 12px;">
+            <span v-if="line.type === 'prompt'" style="color: #27c93f; font-weight: 500;">alexvoste@forgezero:~$</span>
+            <span v-if="line.type === 'prompt'" style="color: #e5e0c7; margin-left: 8px;">{{ line.content }}</span>
+            <div v-if="line.type === 'response'" style="color: #b8b29a; margin-top: 6px; white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem sm:text-0.85rem; border-left: 2px solid #EC8254; padding-left: 12px;">
+              {{ line.content }}
+            </div>
+            <div v-if="line.type === 'ascii'" style="color: #EC8254; margin-top: 8px; white-space: pre; font-family: monospace; font-size: 0.65rem sm:text-0.7rem;">
+              <pre style="margin: 0; font-family: monospace;">{{ line.content }}</pre>
+            </div>
+          </div>
+
+          <div class="input-line" style="display: flex; align-items: center; gap: 8px; margin-top: 12px;">
+            <span style="color: #27c93f; font-weight: 500;">alexvoste@forgezero:~$</span>
+            <input
+              ref="inputRef"
+              v-model="currentCommand"
+              type="text"
+              class="command-input"
+              style="background: transparent; border: none; color: #e5e0c7; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem sm:text-0.85rem; outline: none; flex: 1;"
+              @keyup.enter="handleCommand"
+              placeholder="type help"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute -bottom-6 -right-6 w-24 h-24 border-r-2 border-b-2 border-[#EC8254]/20 rounded-br-2xl hidden lg:block"></div>
     </div>
   </section>
 </template>
@@ -284,6 +295,12 @@ async function handleCommand() {
 <style scoped>
 .terminal {
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.terminal:hover {
+  border-color: #EC8254 !important;
+  box-shadow: 0 20px 35px -10px rgba(236, 130, 84, 0.15);
 }
 
 .command-input::placeholder {
@@ -296,11 +313,16 @@ async function handleCommand() {
 
 .terminal-body::-webkit-scrollbar-track {
   background: #1a1b1a;
+  border-radius: 3px;
 }
 
 .terminal-body::-webkit-scrollbar-thumb {
   background: #3a3b3a;
   border-radius: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: #EC8254;
 }
 
 pre {
@@ -315,5 +337,7 @@ pre {
 
 .cursor-blink {
   animation: blink 1s step-end infinite;
+  display: inline-block;
+  width: 8px;
 }
 </style>
