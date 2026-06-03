@@ -6,14 +6,19 @@
 
 @layer base {
   :root {
-    --thinkpad-black: #0a0a0a;
-    --thinkpad-dark: #1a1a1a;
-    --thinkpad-gray: #2a2b2a;
-    --thinkpad-light: #3a3b3a;
-    --thinkpad-text: #e5e0c7;
-    --thinkpad-text-dim: #b8b29a;
-    --thinkpad-red: #da3e1a;
-    --thinkpad-green: #2ecc71;
+    --industrial-bg: #0f0f0f;
+    --industrial-surface: #1e1f1e;
+    --industrial-surface2: #252625;
+    --industrial-border: #3a3b3a;
+    --industrial-border2: #2a2b2a;
+    --industrial-text: #e0e0e0;
+    --industrial-text-dim: #a0a0a0;
+    --industrial-text-faint: #707070;
+    --industrial-accent: #4a6a8a;
+    --industrial-accent-hover: #8a9aaa;
+    --terminal-bg: #0a0a0a;
+    --terminal-prompt: #5a8a5a;
+    --terminal-prompt-hover: #7a8a7a;
   }
 
   html {
@@ -21,254 +26,133 @@
   }
 
   body {
-    background-color: var(--thinkpad-black);
-    color: var(--thinkpad-text);
-    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    background: linear-gradient(180deg, var(--industrial-bg), #1a1a1a);
+    color: var(--industrial-text);
+    font-family: 'IBM Plex Sans', Inter, sans-serif;
   }
 
-  code, pre, .mono {
-    font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(74, 106, 138, 0.18), transparent 55%),
+      radial-gradient(900px 500px at 100% 10%, rgba(90, 138, 90, 0.14), transparent 50%);
+    opacity: 0.25;
+  }
+
+  #app,
+  .app-container,
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  code,
+  pre,
+  .mono {
+    font-family: 'IBM Plex Mono', 'Fira Code', 'JetBrains Mono', monospace;
   }
 }
 
 @layer components {
   .content-card {
-    background: var(--thinkpad-dark);
-    border: 1px solid var(--thinkpad-gray);
-    border-radius: 4px;
-    transition: border-color 0.2s ease;
+    background: var(--industrial-surface);
+    border: 1px solid var(--industrial-border2);
+    border-radius: 0;
     position: relative;
-  }
-
-  .content-card:hover {
-    border-color: var(--thinkpad-red);
-  }
-
-  .content-card::before {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 16px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--thinkpad-red);
-    box-shadow: 0 0 4px var(--thinkpad-red);
   }
 
   .divider {
     height: 1px;
-    background: var(--thinkpad-gray);
+    background: var(--industrial-border2);
     margin: 2rem 0;
-    position: relative;
   }
 
-  .divider::before {
-    content: '●';
+  .corner-mark {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--thinkpad-dark);
-    padding: 0 0.75rem;
-    color: var(--thinkpad-red);
-    font-size: 0.7rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-color: var(--industrial-border);
+    border-style: solid;
   }
 
-  .timeline-item {
-    border-left: 1px solid var(--thinkpad-gray);
-    transition: all 0.2s ease;
-    padding-left: 1.25rem;
-    margin-left: 0.5rem;
+  .corner-mark.tl {
+    top: 0.55rem;
+    left: 0.55rem;
+    border-width: 1px 1px 0 0;
   }
 
-  .timeline-item:hover {
-    border-left-color: var(--thinkpad-red);
+  .corner-mark.br {
+    bottom: 0.55rem;
+    right: 0.55rem;
+    border-width: 0 0 1px 1px;
   }
 
-  .terminal {
-    background: #0a0b0a;
-    border: 1px solid var(--thinkpad-gray);
-    border-radius: 8px;
+  .terminal-shell {
+    background: var(--terminal-bg);
+    border: 1px solid var(--industrial-border2);
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
   }
 
-  .terminal-header {
-    background: var(--thinkpad-dark);
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--thinkpad-gray);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .terminal-status {
+    background: var(--industrial-surface);
+    border-bottom: 1px solid var(--industrial-border2);
   }
 
-  .terminal-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  .terminal-dot-red { background: #ff5f56; }
-  .terminal-dot-yellow { background: #ffbd2e; }
-  .terminal-dot-green { background: #27c93f; }
-
-  .terminal-body {
-    padding: 1.25rem;
-    min-height: 400px;
-    max-height: 500px;
-    overflow-y: auto;
+  .terminal-line {
+    white-space: pre-wrap;
   }
 
   .terminal-prompt {
-    color: #27c93f;
+    color: var(--terminal-prompt);
   }
 
   .terminal-input {
+    color: var(--industrial-text);
+    outline: none;
     background: transparent;
     border: none;
-    color: var(--thinkpad-text);
+    width: 100%;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.85rem;
-    outline: none;
-    flex: 1;
+    padding: 0.25rem 0;
   }
 
   .terminal-input::placeholder {
-    color: #4a4b4a;
+    color: var(--industrial-text-faint);
   }
 
-  .cursor-blink {
-    animation: blink 1s step-end infinite;
+  .terminal-input:focus {
+    outline: none;
   }
 }
 
 @layer utilities {
-  .accent-glow {
-    animation: glow 3s ease-in-out infinite;
-  }
-
-  .led-green {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--thinkpad-green);
-    box-shadow: 0 0 4px var(--thinkpad-green);
-    margin-right: 6px;
-    animation: led-blink 2s step-start infinite;
-  }
-
-  .led-red {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--thinkpad-red);
-    box-shadow: 0 0 4px var(--thinkpad-red);
-    margin-right: 6px;
-  }
-
-  .kanji-bg {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 12rem;
-    opacity: 0.02;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    pointer-events: none;
-    user-select: none;
-    writing-mode: vertical-rl;
-  }
-
-  .trackpoint {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--thinkpad-red);
-    margin: 0 4px;
-    vertical-align: middle;
-    box-shadow: 0 0 3px var(--thinkpad-red);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 0px var(--thinkpad-red);
-  }
-  50% {
-    text-shadow: 0 0 4px var(--thinkpad-red);
-  }
-}
-
-@keyframes led-blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .terminal-body {
-    min-height: 350px;
-    max-height: 400px;
-    padding: 0.75rem;
-  }
-
-  .timeline-item {
-    padding-left: 0.75rem;
-  }
-
-  .content-card::before {
-    top: 8px;
-    left: 12px;
-    width: 6px;
-    height: 6px;
-  }
-}
-
-@media (max-width: 640px) {
-  .terminal-body {
-    min-height: 300px;
-    max-height: 350px;
-  }
-
-  .terminal-header span {
-    font-size: 0.65rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .terminal-body {
-    min-height: 280px;
-    max-height: 300px;
-    padding: 0.5rem;
-  }
-
-  .terminal-prompt {
-    font-size: 0.75rem;
-  }
-
-  .timeline-item {
-    padding-left: 0.5rem;
-    margin-left: 0.25rem;
-  }
-
-  .divider::before {
-    font-size: 0.6rem;
-    padding: 0 0.5rem;
+  .sr-only-industrial {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
 }
 
@@ -287,14 +171,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--thinkpad-dark);
+  background: var(--industrial-surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--thinkpad-gray);
+  background: var(--industrial-border2);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--thinkpad-light);
+  background: var(--industrial-border);
 }
+
