@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <AppHeader @scroll-to-top="scrollToTop" @scroll-to-section="scrollToSection" />
-    
+
     <main class="relative">
       <ScrollIndicator />
       <BackgroundSection />
@@ -19,6 +19,7 @@
     <Footer />
   </div>
 </template>
+
 
 <script setup>
 import AppHeader from './components/AppHeader.vue'
@@ -53,6 +54,7 @@ const scrollToSection = (id) => {
 <style scoped>
 .app-container {
   position: relative;
-  background: #0a0b0a;
+  background: transparent;
 }
 </style>
+
