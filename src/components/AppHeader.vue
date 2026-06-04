@@ -1,74 +1,53 @@
 <template>
-  <header class="sticky top-0 z-50" style="border-bottom: 1px solid #2a2b2a; background: rgba(15, 15, 15, 0.86); backdrop-filter: blur(6px);">
-    <div class="border-b" style="border-bottom-color:#2a2b2a; background: rgba(18, 18, 18, 0.75);">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-1">
-        <div class="mono text-[0.7rem] text-[#a0a0a0] flex items-center justify-between gap-3">
-          <span>[user@hostname]</span>
-          <span>[uptime: 14d] [load: 0.8] [tty: 1]</span>
+  <header class="sticky top-0 z-50 bg-[#07080a]/80">
+    <div class="border-b-[1px] border-[#1f2128]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mono text-[0.7rem] text-[#8f94a0] flex items-center justify-between gap-3 py-1">
+          <span class="lowercase">[user@hostname]</span>
+          <span class="lowercase">[uptime: 14d] [load: 0.8] [tty: 1]</span>
         </div>
       </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-4">
-          <div class="flex items-center gap-2">
-            <button
-              type="button"
-              class="mono text-[#e0e0e0] text-xs"
-              style="background: transparent; border: 1px solid #2a2b2a; height: 28px; padding: 0 10px;"
-              @click="emit('scrollToTop')"
-            >
-              $ alexvoste@bare-metal:~
-            </button>
-          </div>
-        </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-4 py-3 sm:py-4">
+        <button
+          type="button"
+          class="mono text-xs text-[#dcdfe5] border-[1px] border-[#1f2128] bg-transparent h-7 px-3 flex items-center lowercase transition-all duration-75 hover:border-[#48698a]"
+          @click="emit('scrollToTop')"
+        >
+          $ alexvoste@bare-metal:~
+        </button>
 
-        <nav class="flex flex-wrap justify-center gap-4 sm:gap-6">
+        <nav class="flex items-center gap-5">
           <a
-            href="https://blog.alexvoste.dev"
-            target="_blank"
-            class="nav-link mono"
+            href="/blog"
+            class="nav-link"
           >
             <span class="nav-arrow">></span>
-            <span>blog</span>
+            <span class="lowercase">blog</span>
           </a>
           <a
-            href="mailto:contact@alexvoste.dev"
-            class="nav-link mono"
+            href="/projects"
+            class="nav-link"
           >
             <span class="nav-arrow">></span>
-            <span>email</span>
+            <span class="lowercase">projects</span>
           </a>
           <a
             href="#about"
-            class="nav-link mono"
+            class="nav-link"
             @click.prevent="emit('scrollToSection', 'about')"
           >
             <span class="nav-arrow">></span>
-            <span>about</span>
-          </a>
-          <a
-            href="#forgezero"
-            class="nav-link mono"
-            @click.prevent="emit('scrollToSection', 'forgezero')"
-          >
-            <span class="nav-arrow">></span>
-            <span>forgezero</span>
-          </a>
-          <a
-            href="#forgezero-benchmark"
-            class="nav-link mono"
-            @click.prevent="emit('scrollToSection', 'forgezero-benchmark')"
-          >
-            <span class="nav-arrow">></span>
-            <span>benchmark</span>
+            <span class="lowercase">about</span>
           </a>
         </nav>
       </div>
     </div>
   </header>
 </template>
+
 
 <script setup>
 const emit = defineEmits(['scrollToTop', 'scrollToSection'])
@@ -78,27 +57,29 @@ const emit = defineEmits(['scrollToTop', 'scrollToSection'])
 .nav-link {
   font-size: 0.7rem;
   text-decoration: none;
-  color: #a0a0a0;
+  color: #8f94a0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 0;
+  transition: color 75ms linear;
 }
 
 .nav-arrow {
   width: 10px;
   text-align: center;
-  color: #707070;
+  color: #1f2128;
   font-size: 0.8rem;
 }
 
 .nav-link:hover {
-  color: #4a6a8a;
+  color: #48698a;
 }
 
 .nav-link:focus-visible {
-  outline: 1px solid #3a3b3a;
+  outline: 1px solid #1f2128;
   outline-offset: 2px;
 }
 </style>
+
 
