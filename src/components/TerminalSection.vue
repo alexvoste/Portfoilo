@@ -1,67 +1,59 @@
 <template>
   <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28" id="terminal">
     <div class="relative">
-      <div class="absolute -top-6 -left-6 hidden lg:block" style="width: 6rem; height: 6rem; border-left: 2px solid rgba(74,106,138,0.25); border-top: 2px solid rgba(74,106,138,0.25);"></div>
+      <div class="absolute -top-6 -left-6 hidden lg:block pointer-events-none border-l-[1px] border-t-[1px] border-[#1f2128] w-[6rem] h-[6rem]"></div>
+      <div class="absolute -bottom-6 -right-6 hidden lg:block pointer-events-none border-r-[1px] border-b-[1px] border-[#1f2128] w-[6rem] h-[6rem]"></div>
 
-      <div class="text-center mb-8 lg:mb-10">
-        <div class="inline-block">
-          <div class="inline-flex items-center gap-2 px-4 py-2" style="background: #1e1f1e; border: 1px solid #2a2b2a;">
-            <span class="relative flex h-2 w-2">
-              <span class="absolute inset-0" style="background:#5a8a5a; opacity:0.85;"></span>
-              <span class="absolute inset-0" style="border:1px solid rgba(90,138,90,0.35);"></span>
-            </span>
-            <span style="color:#a0a0a0; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.05em;">INTERACTIVE_TERMINAL</span>
-          </div>
+      <div class="text-left mb-8 lg:mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-2 border-[1px] border-[#1f2128] bg-[#121316]">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inset-0 animate-pulse bg-[#5fa06d] w-2 h-2"></span>
+          </span>
+          <span class="mono text-[0.7rem] text-[#8f94a0] tracking-[0.05em] lowercase">interactive_terminal</span>
         </div>
 
-        <p class="mt-5 text-base sm:text-lg md:text-xl font-medium" style="color:#e0e0e0; font-family:'IBM Plex Sans', sans-serif;">
-          <span style="color:#4a6a8a;">$</span> poke around.<br>
-<span style="color:#8a9aaa; font-family:'IBM Plex Mono', monospace; font-size:0.85rem;">
-            ~ $ <span style="display:inline-block; width: 10px;">_</span>
-          </span>
-        </p>
-
-        <div class="flex justify-center mt-3">
-          <div class="flex gap-1">
-            <span style="width: 30px; height: 2px; background: #4a6a8a; opacity: 0.3;"></span>
-            <span style="width: 40px; height: 2px; background: #4a6a8a; opacity: 0.6;"></span>
-            <span style="width: 20px; height: 2px; background: #4a6a8a;"></span>
+        <div class="mt-5">
+          <div class="mono text-sm sm:text-base text-[#8f94a0] lowercase leading-6">
+            <span class="text-[#48698a]">$</span> poke around.
+          </div>
+          <div class="mono text-xs text-[#48698a] mt-1 lowercase">
+            ~ $ <span class="inline-block w-[10px]">_</span>
           </div>
         </div>
       </div>
 
-      <div class="terminal-shell" style="background:#0a0a0a; border-color:#2a2b2a;">
-        <div class="terminal-status" style="padding: 12px 16px; display:flex; align-items:center; gap:8px;">
+      <div class="terminal-shell" style="background:#07080a;">
+        <div class="terminal-status" style="padding: 12px 16px; display:flex; align-items:center; gap:8px; background: var(--surface); border-bottom: 1px solid var(--border);">
           <div style="display:flex; gap:8px;">
-            <span style="width:12px; height:12px; border:1px solid #3a3b3a; background:#2a2b2a;"></span>
-            <span style="width:12px; height:12px; border:1px solid #3a3b3a; background:#2a2b2a;"></span>
-            <span style="width:12px; height:12px; border:1px solid #3a3b3a; background:#2a2b2a;"></span>
+            <span class="w-3 h-3 border-[1px] border-[#1f2128] bg-[#121316]"></span>
+            <span class="w-3 h-3 border-[1px] border-[#1f2128] bg-[#121316]"></span>
+            <span class="w-3 h-3 border-[1px] border-[#1f2128] bg-[#121316]"></span>
           </div>
-          <span class="mono" style="color:#a0a0a0; font-size:0.7rem; margin-left:auto; opacity:0.85;">alexvoste@forgezero:~</span>
+          <span class="mono text-[0.7rem] text-[#8f94a0] ml-auto lowercase">alexvoste@forgezero:~</span>
         </div>
 
-        <div class="terminal-body" style="padding: 1.25rem; min-height: 420px; max-height: 520px; overflow-y: auto;">
-          <div class="terminal-line" style="margin-bottom: 12px;">
-            <div class="mono" style="color:#5a8a5a;">boot: cold start</div>
-            <div class="mono" style="color:#a0a0a0; margin-top:6px;">init: storage ok · network staged</div>
-            <div class="mono" style="color:#a0a0a0; margin-top:6px;">ready: type <span style="color:#8a9aaa;">help</span> for commands</div>
+        <div class="terminal-body" style="padding: 1.25rem; min-height: 420px; max-height: 520px; overflow-y: auto; background:#07080a;">
+          <div class="terminal-line mb-3">
+            <div class="mono text-[#5fa06d]">boot: cold start</div>
+            <div class="mono text-[#8f94a0] mt-1">init: storage ok · network staged</div>
+            <div class="mono text-[#8f94a0] mt-1">ready: type <span class="text-[#48698a]">help</span> for commands</div>
           </div>
 
           <div v-for="(line, idx) in outputLines" :key="idx" class="terminal-line" style="margin-bottom: 12px;">
-            <span v-if="line.type === 'prompt'" style="color:#5a8a5a; font-weight:500; font-family:'IBM Plex Mono', monospace;">alexvoste@forgezero:~$</span>
-            <span v-if="line.type === 'prompt'" style="color:#e0e0e0; margin-left:8px; font-family:'IBM Plex Mono', monospace;">{{ line.content }}</span>
+            <span v-if="line.type === 'prompt'" class="mono text-[#5fa06d] font-medium">alexvoste@forgezero:~$</span>
+            <span v-if="line.type === 'prompt'" class="mono text-[#dcdfe5] ml-2 lowercase">{{ line.content }}</span>
 
-            <div v-if="line.type === 'response'" style="color:#a0a0a0; margin-top:6px; white-space: pre-wrap; font-family:'IBM Plex Mono', monospace; font-size:0.85rem; border-left: 1px solid #3a3b3a; padding-left: 12px;">
+            <div v-if="line.type === 'response'" class="mono text-[#8f94a0] mt-1" style="white-space: pre-wrap; font-size:0.85rem; border-left: 1px solid #1f2128; padding-left: 12px;">
               {{ line.content }}
             </div>
 
-            <div v-if="line.type === 'ascii'" style="color:#4a6a8a; margin-top:8px; white-space: pre; font-family:'IBM Plex Mono', monospace; font-size:0.7rem;">
-              <pre style="margin: 0; font-family:'IBM Plex Mono', monospace;">{{ line.content }}</pre>
+            <div v-if="line.type === 'ascii'" class="mono text-[#48698a] mt-2" style="white-space: pre; font-size:0.7rem;">
+              <pre style="margin: 0; font-family:'JetBrains Mono','Fira Code',ui-monospace,SF Mono,system-ui,monospace;">{{ line.content }}</pre>
             </div>
           </div>
 
           <div class="input-line" style="display:flex; align-items:center; gap:8px; margin-top: 12px;">
-            <span style="color:#5a8a5a; font-weight:500; font-family:'IBM Plex Mono', monospace;">alexvoste@forgezero:~$</span>
+            <span class="mono text-[#5fa06d] font-medium">alexvoste@forgezero:~$</span>
             <input
               ref="inputRef"
               v-model="currentCommand"
@@ -74,11 +66,10 @@
           </div>
         </div>
       </div>
-
-      <div class="absolute -bottom-6 -right-6 hidden lg:block" style="width: 6rem; height: 6rem; border-right: 2px solid rgba(74,106,138,0.25); border-bottom: 2px solid rgba(74,106,138,0.25);"></div>
     </div>
   </section>
 </template>
+
 
 <script setup>
 import { ref, nextTick, onMounted } from 'vue'
@@ -230,16 +221,17 @@ onMounted(() => {
 }
 
 .terminal-body::-webkit-scrollbar-track {
-  background: #1a1b1a;
+  background: #07080a;
 }
 
 .terminal-body::-webkit-scrollbar-thumb {
-  background: #3a3b3a;
+  background: #1f2128;
   border-radius: 3px;
 }
 
 .terminal-body::-webkit-scrollbar-thumb:hover {
-  background: #4a6a8a;
+  background: #48698a;
 }
 </style>
+
 
