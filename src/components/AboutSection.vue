@@ -7,7 +7,7 @@
         </h2>
 
         <p class="text-sm sm:text-base" style="color: #a0a0a0; font-family: 'IBM Plex Mono', monospace; line-height: 1.8; margin-bottom: 16px;">
-          systems engineer, low-level shit only. building fast, reliable, privacy-respecting software is the whole point. OS dev, compilers, bootloaders — bare metal or nothing.
+          systems engineer focused on low-level engineering. building fast, reliable, privacy-respecting software is the goal. os development, compilers, bootloaders — bare metal or nothing.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-8 sm:my-12">
@@ -52,11 +52,11 @@
       <div class="divider my-8 sm:my-10"></div>
 
       <div class="content-card p-6 sm:p-8 md:p-12" style="margin-top: 24px; border-radius: 0;">
-        <p class="quote-text text-sm sm:text-base md:text-lg" style="margin-bottom: 0; color: #4a6a8a; font-family: 'Noto Sans JP', sans-serif;">
-          旅に病で夢は枯野をかけめぐる
+        <p class="quote-text text-sm sm:text-base md:text-lg" style="margin-bottom: 0; color: #4a6a8a; font-family: 'Open Sans', system-ui, sans-serif;">
+          The computer is not the product. The product is what you build with it.
         </p>
-        <p class="text-xs sm:text-sm" style="color: #a0a0a0; font-family: 'IBM Plex Mono', monospace; margin-top: 12px; font-style: italic;">
-          sick on the road, dreams still roaming the dead fields. — Buson
+        <p class="text-xs sm:text-sm" style="color: #a0a0a0; font-family: 'JetBrains Mono', monospace; margin-top: 12px; font-style: italic;">
+          — AlexVoste
         </p>
       </div>
     </div>
