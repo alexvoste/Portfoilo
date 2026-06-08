@@ -16,8 +16,9 @@ export default {
         }
       },
       fontFamily: {
-        display: ['JetBrains Mono', 'Fira Code', 'system-ui', 'monospace'],
-        mono: ['JetBrains Mono', 'Fira Code', 'SF Mono', 'ui-monospace', 'system-ui', 'monospace']
+        display: ['JetBrains Mono NL', 'JetBrains Mono', 'Fira Code', 'system-ui', 'monospace'],
+        mono: ['JetBrains Mono NL', 'JetBrains Mono', 'Fira Code', 'SF Mono', 'ui-monospace', 'system-ui', 'monospace'],
+        sans: ['Open Sans', 'system-ui', 'sans-serif']
       }
     }
   },
