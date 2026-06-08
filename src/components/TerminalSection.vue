@@ -14,7 +14,7 @@
 
         <div class="mt-5">
           <div class="mono text-sm sm:text-base text-[#8f94a0] lowercase leading-6">
-            <span class="text-[#48698a]">$</span> poke around.
+            <span class="text-[#48698a]">$</span> inspect.
           </div>
           <div class="mono text-xs text-[#48698a] mt-1 lowercase">
             ~ $ <span class="inline-block w-[10px]">_</span>
@@ -70,37 +70,32 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref, nextTick, onMounted } from 'vue'
 
 const inputRef = ref(null)
 const currentCommand = ref('')
-const outputLines = ref([
-  { type: 'response', content: 'Welcome. Type help to see what i can do.' }
-])
-
-const sudoAttempts = ref(0)
+const outputLines = ref([{ type: 'response', content: 'Welcome. Type help to see what I can do.' }])
 
 const commands = {
   help: () => ({
-    type: 'response',
-    content: `available commands:\n  help        - show this\n  info        - whoami\n  about       - short bio\n  ls          - list site sections\n  pwd         - current location\n  skills      - tech stack\n  projects    - what i built\n  forgezero   - about ForgeZero\n  contact     - links\n  uptime      - how long i've been coding\n  motd        - message of the day\n  neofetch    - ascii + sysinfo\n  whoami      - display current user\n  id          - show user identity\n  uname -a    - system information\n  echo        - repeat after me\n  date        - current time\n  cowsay      - cow says hello\n  sl          - steam locomotive\n  fortune     - random wisdom\n  clear       - clean screen\n`.trim()
-  }),
+  type: 'response',
+  content: `available commands:\n  help        - show this\n  info        - whoami\n  about       - short bio\n  ls          - list site sections\n  pwd         - current location\n  skills      - tech stack\n  projects    - what i built\n  forgezero   - about ForgeZero\n  contact     - links\n  uptime      - how long I have been working\n  motd        - message of the day\n  neofetch    - system overview\n  whoami      - display current user\n  id          - show user identity\n  uname -a    - system information\n  echo        - repeat after me\n  date        - current time\n  cowsay      - feature unavailable\n  fortune     - random wisdom\n  clear       - clean screen`
+}), 
 
   info: () => ({
     type: 'response',
-    content: 'alexvoste — systems engineer, Go dev with low-level soul. i speak Go, C, assembly.'
+    content: 'alexvoste — systems engineer, Go developer with a low-level focus. I speak Go, C, and assembly.'
   }),
 
   about: () => ({
     type: 'response',
-    content: 'from python → php → flutter → c/asm → go. web studios, freelance, sysadmin. built TUI messenger with custom crypto, P2P file sharing, telegram bot with monero/ton/usdt. now: go + wasm + low-level.'
+    content: 'from python → php → flutter → c/asm → go. web studios, freelance, sysadmin. built a TUI messenger with custom crypto, P2P file sharing, and a Telegram bot. now: Go + WASM + low-level systems.'
   }),
 
   ls: () => ({
     type: 'response',
-    content: 'HeroSection/\nAboutSection/\nPrimaryTechnicalFocus/\nForgeZeroSection/\nForgeZeroSpeed/\nHistorySection/\nDiplomaSection/\nLinksSection/\nFooter/'
+    content: 'HeroSection/\nAboutSection/\nPrimaryTechnicalFocus/\nForgeZeroSection/\nForgeZeroSpeed/\nHistorySection/\nStudySection/\nLinksSection/\nFooter/'
   }),
 
   pwd: () => ({
@@ -115,22 +110,22 @@ const commands = {
 
   projects: () => ({
     type: 'response',
-    content: 'ForgeZero (Go), NASM (AVX512-FP16), Limine (EFI handover), TUI messenger (C/crypto), P2P file sharing, Telegram bot (crypto+AI), ForgePanel (Go+WASM).'
+    content: 'ForgeZero (Go), NASM (AVX512-FP16), Limine (EFI handover), TUI messenger (C/crypto), P2P file sharing, Telegram bot (crypto + AI), ForgePanel (Go + WASM).'
   }),
 
   forgezero: () => ({
     type: 'response',
-    content: 'ForgeZero — open-source build system for C/asm. parallel builds, BLAKE3 cache, SAST, SBOM, cross-compilation (Zig), Windows native. first prototype: Node.js no deps. now: Go.'
+    content: 'ForgeZero — open-source build system for C/asm. parallel builds, BLAKE3 cache, SAST, SBOM, cross-compilation (Zig), and Windows native support. first prototype: Node.js, no dependencies. now: Go.'
   }),
 
   contact: () => ({
     type: 'response',
-    content: 'github.com/alexvoste | @alexvoste (tg) | alexvostedev@proton.me'
+    content: 'github.com/alexvoste | @alexvoste | alexvostedev@proton.me'
   }),
 
   uptime: () => ({
     type: 'response',
-    content: 'coding since 2018. ~8 years of breaking shit and fixing it.'
+    content: 'coding since 2018. eight years of shipping and refining.'
   }),
 
   motd: () => ({
@@ -153,29 +148,31 @@ const commands = {
     content: 'Linux forgezero 7.0.10-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC x86_64 GNU/Linux'
   }),
 
+  neofetch: () => ({
+    type: 'response',
+    content: 'system: Linux (x86_64)\nkernel: zen/patched\nprimary: Go + C + assembly\nfocus: low-level tooling and verifiable builds'
+  }),
+
   date: () => ({
     type: 'response',
     content: new Date().toString()
   }),
 
   cowsay: () => ({
-    type: 'ascii',
-    content: '_________\n< hello >\n-------\n\\   ^__^\n \\  (oo)\\_______\n   (__)\\       )\\/\\\n       ||----w |\n       ||     ||'
+    type: 'response',
+    content: 'Feature unavailable in this terminal view.'
   }),
 
-  fortune: () => {
-    const fortunes = [
+  fortune: () => ({
+    type: 'response',
+    content: [
       '"It works on my machine" — every developer ever',
-      'There are only two hard things in Computer Science: cache invalidation and naming things.',
+      'There are only two hard things in computer science: cache invalidation and naming things.',
       'Premature optimization is the root of all evil.',
       'Real programmers count from 0.',
       'The code is more what you would call guidelines than actual rules.'
-    ]
-    return {
-      type: 'response',
-      content: fortunes[Math.floor(Math.random() * fortunes.length)]
-    }
-  },
+    ][Math.floor(Math.random() * 5)]
+  }),
 
   clear: () => {
     outputLines.value = []
@@ -233,5 +230,4 @@ onMounted(() => {
   background: #48698a;
 }
 </style>
-
 
